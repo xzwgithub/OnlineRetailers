@@ -35,7 +35,7 @@ class _IndexPageState extends State<IndexPage> {
   ];
 
   //导航页面
-  final List tabBodies = [
+  final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
     CardPage(),
@@ -68,7 +68,10 @@ class _IndexPageState extends State<IndexPage> {
             });
           },
       ),
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children:tabBodies,
+      ),
     );
   }
 
